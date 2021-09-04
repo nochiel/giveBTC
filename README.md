@@ -9,9 +9,8 @@
 
 ## Additional Information
 
-The following files contain…
-
-* `$ListOfEssentialDocs`
+- [](doc/reviews): contains a review of existing challenges, opportunities, and applications for receiving bitcoin donations.
+- [](doc/use-cases): contains a list and description of use cases for a bitcoin donation app.
 
 ## Gordian Principles
 
