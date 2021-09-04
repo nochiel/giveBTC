@@ -54,4 +54,10 @@ Below is a guide on how to get started receiving bitcoin donations with a self-s
 
 7. Navigate to the CypherpunkPay hidden service using the Tor Browser you installed on your phone in Step 6. Donate a small amount of satoshis to yourself! You should immediately see the amount appear in your CypherpunkPay wallet in BlueWallet. Now anyone who uses your hidden service can donate to you!
 
+## **WIP**: Roadmap to make using CypherpunkPay easier for non-technical activists.
 
+
+# **WIP**: How to receive Bitcoin donations via Lightning
+
+- What is Lightning?
+    - Lightning is a Layer 2 (L2) for the Bitcoin network. This means that it provides an alternative means of transferring value in satoshis backed by the same security guarantees and assurances as the Layer 1 Bitcoin network.

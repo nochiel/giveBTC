@@ -2,10 +2,10 @@
 
 <!--Guidelines: https://github.com/BlockchainCommons/secure-template/wiki -->
 
-### _by Nicholas Ochiel_
+### _by Nicholas Ochiel and Namcios _ 
 
-**`giveBTC`** is a simple, low maintenance way to receive donations in satoshis.
-- This project also serves as a repository of research on existing bitcoin donation apps/tools.
+**`giveBTC`** is a research project into a simple, low maintenance way to receive donations in satoshis.
+- This project also serves as a repository of new implementations of or links to existing bitcoin donation apps/tools.
 
 ## Additional Information
 
@@ -15,7 +15,7 @@ The following files contain…
 
 ## Gordian Principles
 
-` giveBTC` is a reference implementation meant to display the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles), which are philosophical and technical underpinnings to Blockchain Commons' Gordian technology. This includes:
+` giveBTC` is a research project (and potential reference implementation of a donation app or tools to install and use a viable donation app) meant to display the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles), which are philosophical and technical underpinnings to Blockchain Commons' Gordian technology. This includes:
 
 * **Independence.** `how does it demonstrate independence`
 * **Privacy.** `how does it demonstrate privacy`
@@ -23,8 +23,6 @@ The following files contain…
 * **Openness.** `how does it demonstrate openness`
 
 Blockchain Commons apps do not phone home and do not run ads. Some are available through various app stores; all are available in our code repositories for your usage.
-
-`REMOVE THIS SECTION UNLESS THIS IS A REFERENCE APP MEANT TO DEMONSTRATE GORDIAN PRINCIPLES`
 
 ## Status - Prototype
 
@@ -54,8 +52,7 @@ This table below also establishes provenance (repository of origin, permalink, a
 
 To build  `giveBTC` you'll need to use the following tools:
 
-- [Typescript]()
-- [Node.js]()
+- A standard Debian Linux instalation.
 
 ### Libraries
 
@@ -135,6 +132,7 @@ The following people directly contributed to this repository. You can add your n
 | ----------------- | ------------------- | ------------------------------------------------- | ------------------------------------- | -------------------------------------------------- |
 | Christopher Allen | Principal Architect | [@ChristopherA](https://github.com/ChristopherA) | \<ChristopherA@LifeWithAlacrity.com\> | FDFE 14A5 4ECB 30FC 5D22  74EF F8D3 6C91 3574 05ED |
 | Nicholas Ochiel   | Project lead.       | [@nochiel](https://github.com/nochiel)            | \<nochiel@users.noreply.github.com> | 45EA 5C81 9B7E E915 C2A2  7C64 4444 1190 7BE8 83D9 |
+| Namcios           | Contributor         | [@namcios](https://github.com/namcios)            | \<namcios@protonmail.com\>          | 55A2 4BE0 AEE5 DB41 52C6 A410 8E3A 3683 1726 9AB4 |   
 
 ## Responsible Disclosure
 
@@ -148,9 +146,10 @@ Please report suspected security vulnerabilities in private via email to Christo
 
 The following keys may be used to communicate sensitive information to developers:
 
-| Name              | Fingerprint                                        |
-| ----------------- | -------------------------------------------------- |
-| Christopher Allen | FDFE 14A5 4ECB 30FC 5D22  74EF F8D3 6C91 3574 05ED |
-| Nicholas Ochiel   | 45EA 5C81 9B7E E915 C2A2  7C64 4444 1190 7BE8 83D9 |
+| Name              | Fingerprint                                       |
+| ----------------- | --------------------------------------------------|
+| Christopher Allen | FDFE 14A5 4ECB 30FC 5D22 74EF F8D3 6C91 3574 05ED |
+| Nicholas Ochiel   | 45EA 5C81 9B7E E915 C2A2 7C64 4444 1190 7BE8 83D9 |
+| Namcios           | 55A2 4BE0 AEE5 DB41 52C6 A410 8E3A 3683 1726 9AB4 |
 
 You can import a key by running the following command with that individual’s fingerprint: `gpg --recv-keys "<fingerprint>"` Ensure that you put quotes around fingerprints that contain spaces.
