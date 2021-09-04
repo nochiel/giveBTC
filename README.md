@@ -9,8 +9,8 @@
 
 ## Additional Information
 
-- [](doc/reviews): contains a review of existing challenges, opportunities, and applications for receiving bitcoin donations.
-- [](doc/use-cases): contains a list and description of use cases for a bitcoin donation app.
+- [Reviews](doc/reviews.md): contains a review of existing challenges, opportunities, and applications for receiving bitcoin donations.
+- [Use Cases](doc/use-cases.md): contains a list and description of use cases for a bitcoin donation app.
 
 ## Gordian Principles
 
