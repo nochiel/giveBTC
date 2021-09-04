@@ -12,12 +12,13 @@
 # CypherpunkPay
 
 - We need to make this easy to install: 
-    - [x] add CypherpunkPay as a BitcoinStandup-Script module.
+    - [x] add CypherpunkPay as a BitcoinStandup-Scripts/LinodeStandup module.
+        - [x] Give the LinodeStandup script a `quick start` option that configures CypherPunkPay without the requirement of a full node.
     - ~Create a CypherpunkPay one-click [LunaNode](https://www.lunanode.com/) launcher~
         - Not really necessary because it's now easy to use a BlockchainCommons Linode Stackscript to install.
     - ~Create a CypherpunkPay one-click [Voltage](https://voltage.cloud/) launcher.~
 
-- Maintenance of CypherpunkPay is cheap: A USD5 p.m VPS should be sufficient. 
+- Maintenance of CypherpunkPay is cheap: A USD5 p.m VPS should be sufficient to run it in `quick start`(lite) mode. 
     - A Bitcoin full-node is not needed. CypherpunkPay can use randomly selected Blockchain explorers to download blocks.
     - A Lightning node for CypherpunkPay can be run in a lightweight way using:
         - [LND](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md#using-neutrino) configured with the [Neutrino backend](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md#using-neutrino) which makes use of a Bitcoin node with BIP157 and BIP158 enabled.

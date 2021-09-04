@@ -1,25 +1,31 @@
 ## Tradeoffs
 
-A typical donation app involves many moving parts for someone who uses it:
-- Bitcoin node
-- Lightning node
-- Web hosting
-- Bitcoin wallet
-- Lightning channels
+A typical donation app involves many moving parts for someone who uses it. In order of priority for self-sovereignty, these parts are:
+
 - Private Keys
+    - Keys are essentially one's coins. If one does not control their private keys, they merely have an IOU (from whomever holds their keys, e.g. an exchange) or they have nothing (see, for instance, all the users of AfriCrypt who were left with nothing when the founders of that exchange fled in 2021).
+- Bitcoin node
+    - A node is the source of truth about the state of the Bitcoin network. Without a node, one has to trust 3rd parties to tell their wallet the state of the Bitcoin network and their won unspent transaction outputs (UTXOs).
+- Lightning node
+- Bitcoin wallet
+    - A wallet is essentially a collection of public keys that were generated in some way from one or more private keys.
+- Lightning channels
 - Wallet backups
 - Lightning channels backups
 - Backups of private keys
 - Onboarding costs and time
 - Operational and maintenance costs
+- Web hosting for whatever public/private services one might want to run e.g. a donations page or online store.
 
 Ideally, one should be fully sovereign. This would require that person to **run** their own Bitcoin and Lightning nodes, **manage** their channels, securely **create and store** backups, **connect** their nodes through Tor, **host** their own website with something like Yunohost, **backup** their private keys or seed phrase on metal, and **backup** their Lightning channels states.
 
-However, this situation usually requires deep **technical expertise** and **time** commitment and incurs high **costs**. Naturally, therefore, compromises must be made. But some aspects shouldn't be compromised on, perhaps more importantly it should be ensured that the user remains in control of their own private keys and only the user knows what the private keys are, i.e.  _`giveBTC` remains self-custodial._ Otherwise, `giveBTC` would have a deep security tradeoff most likely not worth taking.
+However, this situation usually requires deep **technical expertise** and **time** commitment and incurs high **costs**. Additionally, there are risks: if something goes wrong and one loses their funds there is no CEO or customer service department of Bitcoin whom one can call. Sovereignty's other side is personal responsibility. 
 
-Another compromise the app should not make relates to privacy. Addresses should not be reused by default. Optionally, but for activists most likely necessarily, the app should be behind a torgap.
+Naturally, therefore, compromises must be made. But some aspects shouldn't be compromised on, perhaps more importantly it should be ensured that the user remains in control of their own private keys and only the user knows what the private keys are, i.e.  _`giveBTC` tries to be a repositor of what services and tools allow the user to custody their own keys and make decisions about tradeoffs while receiving bitcoin donations.
 
-Some tradeoffs that _can_ be made relate to `node`, `hosting`, and `backups`.
+Another compromise the app should not make relates to privacy. Consider reading [A beginner's guide to Bitcoin privacy](https://bitcoiner.guide/privacy/) for a list of the main things users of Bitcoin should keep in mind.
+
+The fundamental question of tradeoffs in Bitcoin is with respect to trusted third parties. Bitcoin users should answer for themselves the question: "Who am I trusting for the various aspects of my Bitcoin usage?" Having some idea of the answers to these questions is important because history shows that *trusted intermediaries are security holes*'
 
 ### Node
 
@@ -58,10 +64,55 @@ If the app cannot handle everything related to backups, the user should be direc
 
 ---
 
-> A key criteria of trade offs that I see is with Bitcoin only, private keys are only required to spend, and can be kept offline. Lightning requires private keys to online (or at least some) which means more complications to manage the higher risk. (@ChristopherA)
+> A key criteria of tradeoffs that I see is with Bitcoin only, private keys are only required to spend, and can be kept offline. Lightning requires private keys to online (or at least some) which means more complications to manage the higher risk. (@ChristopherA)
 
-## [WIP] Use Cases
+## What are the pain points in Bitcoin usage that a donation app/service should address?
+
+    - Difficulty of installation for a non-technical activist?
+        - Avoiding loss of funds by the activist.
+            - Donors should have a reasonable funnel and not give up because of user interface difficulties. If a donor logs off without completing their donation, the activist has lost funds.
+            - The activist should not have to keep a hot-wallet online. If a hot-wallet is accessed by a third party, the keys it records can be stolen.
+    - Avoiding loss of funds by donors.
+        - Donors should have high confidence that when they complete a donation it goes to the intended activist.
+    - Ease of accounting.
+        - The activist should be able to collate and record their receipts. Different activists will be in different jurisdictions and have varying reporting and accounting requirements. A donation app should allow them to satisfy these requirements.
+        - A donor should see a simple invoice that they can keep for their own records. At a minimum, they should see the transaction hash and the `nym the donor has chosen to use.
+
+## <a name='features'>What features are wanted?</a>
+
+- Ability to pay to an on-chain address without address reuse.
+    - E.g. <http://hexawallet.io>'s donation account functionality?
+- Ability to pay to a Lighting ⚡ invoice using e.g. LNURL-pay in addition to Lightning Invoices (BOLT-11).
+- Privacy by default. In particular:
+  - No address reuse.
+  - Tor-gapped so that hosting can't be targeted.
+  - Only the user, should be able to control the addresses generated by the app.
+-  Low cost of maintenance.
+
+---
+
+## Use Cases
 
 ### Sebastian - the human rights activist
 
 Sebastian is a human rights activist in Romania. He has limited access to the traditional banking system and resorts to Bitcoin for receiving donations, paying contractors, and covering daily expenses. He also has a very busy schedule, so he enjoys how convenient `app` is. Sebastian didn't need to learn a lot of things to be up and running with giveBTC.
+
+## Alice using `app`
+
+- Alice is a women's rights activist who wants to receive Bitcoin ₿ donations non-custodially.
+- Alice does not have a server. She is not a technical person or power user. She does not have capacity for complicated accounting.
+- On `app`, she can create an account with her public key and a signature of her public key as input.
+    - Alternatively, she can run a simple script on a hosting provider like Linode and quickly stand up her donations age.
+- She is directed to a donation widget that she can customise.
+- She can then share a link to this widget or embed it in a blog.
+- The widget gives Alice a real-time listed of her addresses and donations to those addresses.
+- The widget allows her to export all her keys whenever she wants.
+
+## Charlie using giveBTC.app to donate to Alice.
+
+- Charlie uses a link from Alice to go to her donation page.
+- He can choose a currency and amount he'd like to donate.
+- He is presented with a unique URL (qr code) that contains both the address and the amount in sats to donate. 
+- He scans the qr with his wallet (or taps the URL which opens his wallet) and makes a donation.
+- The widget tells him that his donation has been successfully received.
+
